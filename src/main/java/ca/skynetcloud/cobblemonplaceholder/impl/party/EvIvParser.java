@@ -21,7 +21,7 @@ public class EvIvParser extends PartyParser
         super(0);
         this.isEv = false;
         this.suffix = "";
-        this.stat = Stats.ATTACK;
+        this.stat = null;
     }
     
     protected EvIvParser(final int slot, final boolean isEv, final String suffix, final Stats stat) {

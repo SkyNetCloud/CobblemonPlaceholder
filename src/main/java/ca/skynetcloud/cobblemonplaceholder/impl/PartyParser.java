@@ -2,7 +2,9 @@ package ca.skynetcloud.cobblemonplaceholder.impl;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import net.minecraft.server.level.ServerPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -15,8 +17,8 @@ public abstract class PartyParser implements Parser {
         this.slot = slot;
     }
     @Override
-    public Object parse(final Player player, final String[] args){
-        final Pokemon pokemon = this.getPokemon(player, this.slot);
+    public Object parse(final Player player, final String[] args) {
+        final Pokemon pokemon = this.getPartyPokemon(player, this.slot);
         final String[] trimmed = (args.length >= 3) ? Arrays.copyOfRange(args, 2, args.length) : new String[0];
         if (pokemon == null)  {
             return "";

@@ -1,8 +1,7 @@
 package ca.skynetcloud.cobblemonplaceholder;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.EvIvParser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.LevelParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
 
 import com.google.common.collect.Sets;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
@@ -65,6 +64,9 @@ public class CobblemonExpansion extends PlaceholderExpansion {
     static {
         defaultParsers = Sets.newHashSet(
                 new EvIvParser(),
+                new GenderParser(),
+                new NatureParser(),
+                new PokeballParser(),
                 new LevelParser()
         );
         parsers = new HashMap<>();
