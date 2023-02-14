@@ -1,12 +1,18 @@
 package ca.skynetcloud.cobblemonplaceholder;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
-
+import ca.skynetcloud.cobblemonplaceholder.impl.party.GenderParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.LevelParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.NatureParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.PokeballParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.evs.*;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.ivs.*;
+import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.google.common.collect.Sets;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -40,14 +46,14 @@ public class CobblemonExpansion extends PlaceholderExpansion {
         return super.register();
     }
 
-    public String onRequest(final OfflinePlayer player, final String identifier) {
+    public String onRequest(final OfflinePlayer player, final @NotNull String identifier) {
         if (player != null && player.isOnline()) {
             return this.onPlaceholderRequest(player.getPlayer(), identifier);
         }
         return null;
     }
 
-    public String onPlaceholderRequest(final Player p, final String identifier) {
+    public String onPlaceholderRequest(final Player p, final @NotNull String identifier) {
         if (p == null || !p.isOnline()) {
             return "INVALID_PLAYER";
         }
@@ -56,14 +62,34 @@ public class CobblemonExpansion extends PlaceholderExpansion {
         final Parser parser = CobblemonExpansion.parsers.get(formattedInput);
         if (parser != null) {
             final String[] args = formattedInput.split("_");
-            return parser.parse(player, args).toString();
+            try {
+                return parser.parse(player, args).toString();
+            } catch (NoPokemonStoreException e) {
+                throw new RuntimeException(e);
+            }
         }
         return "Could not parse request check syntax please";
     }
 
     static {
         defaultParsers = Sets.newHashSet(
-                new EvIvParser(),
+                new PartyIvHpParser(),
+                new PartyIvAttackParser(),
+                new PartyIvDefenceParser(),
+                new PartyIvSPAttackParser(),
+                new PartyIvSPDefenceParser(),
+                new PartyIvSpeedParser(),
+
+
+                new PartyEvHpParser(),
+                new PartyEvAttackParser(),
+                new PartyEvDefenceParser(),
+                new PartyEvSPAttackParser(),
+                new PartyEvSPDefenceParser(),
+                new PartyEvSpeedParser(),
+
+
+
                 new GenderParser(),
                 new NatureParser(),
                 new PokeballParser(),

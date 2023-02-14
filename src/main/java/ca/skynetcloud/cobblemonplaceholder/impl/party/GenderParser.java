@@ -4,6 +4,7 @@ package ca.skynetcloud.cobblemonplaceholder.impl.party;
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import org.bukkit.entity.Player;
 public class GenderParser extends PartyParser
@@ -11,7 +12,7 @@ public class GenderParser extends PartyParser
     public GenderParser() {
         super(0);
     }
-    
+
     protected GenderParser(final int slot) {
         super(slot);
     }
