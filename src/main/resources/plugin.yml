@@ -1,0 +1,7 @@
+name: CobblemonPlacholder
+version: 1.0.0
+main: ca.skynetcloud.cobblemonplaceholder.Cobblemonplaceholder
+api-version: 1.19
+depend: [ PlaceholderAPI ]
+authors: [ SkyNetCloud ]
+description: A simple utility to link your PAPI with Cobblemon!
