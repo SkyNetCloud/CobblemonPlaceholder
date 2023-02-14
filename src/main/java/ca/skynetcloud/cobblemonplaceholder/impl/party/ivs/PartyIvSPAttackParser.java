@@ -5,7 +5,6 @@ import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class PartyIvSPAttackParser extends PartyParser {
@@ -37,7 +36,6 @@ public class PartyIvSPAttackParser extends PartyParser {
 
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        Bukkit.getLogger().info(String.valueOf(pokemon.getIvs().getOrDefault(Stats.SPEED)));
         return pokemon.getIvs().getOrDefault(Stats.SPECIAL_ATTACK);
     }
 }

@@ -13,7 +13,7 @@ public class PartyEvHpParser extends PartyParser {
 
     public PartyEvHpParser() {
         super(0);
-        this.stat = Stats.valueOf(null);
+        this.stat = Stats.HP;
 
     }
 

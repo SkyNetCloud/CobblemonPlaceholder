@@ -13,7 +13,7 @@ public class PartyIvSpeedParser extends PartyParser {
 
     public PartyIvSpeedParser() {
         super(0);
-        this.stat = Stats.valueOf(null);
+        this.stat = Stats.SPEED;
 
     }
 

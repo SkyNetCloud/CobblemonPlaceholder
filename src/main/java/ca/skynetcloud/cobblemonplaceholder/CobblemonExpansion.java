@@ -1,10 +1,7 @@
 package ca.skynetcloud.cobblemonplaceholder;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.GenderParser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.LevelParser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.NatureParser;
-import ca.skynetcloud.cobblemonplaceholder.impl.party.PokeballParser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.evs.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.ivs.*;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
@@ -29,15 +26,15 @@ public class CobblemonExpansion extends PlaceholderExpansion {
         return true;
     }
 
-    public String getIdentifier() {
+    public @NotNull String getIdentifier() {
         return "cobblemon";
     }
 
-    public String getAuthor() {
+    public @NotNull String getAuthor() {
         return "SkyNetCloud";
     }
 
-    public String getVersion() {
+    public @NotNull String getVersion() {
         return "1.0.0";
     }
 
@@ -73,6 +70,10 @@ public class CobblemonExpansion extends PlaceholderExpansion {
 
     static {
         defaultParsers = Sets.newHashSet(
+                new DexNumberParser(),
+                new AbilityParser(),
+                new ExperienceParser(),
+
                 new PartyIvHpParser(),
                 new PartyIvAttackParser(),
                 new PartyIvDefenceParser(),

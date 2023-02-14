@@ -13,7 +13,7 @@ public class PartyIvDefenceParser extends PartyParser {
 
     public PartyIvDefenceParser() {
         super(0);
-        this.stat = Stats.ATTACK;
+        this.stat = Stats.DEFENCE;
 
     }
 

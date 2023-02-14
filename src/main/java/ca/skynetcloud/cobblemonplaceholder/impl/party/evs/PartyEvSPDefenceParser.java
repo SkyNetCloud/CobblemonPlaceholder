@@ -13,7 +13,7 @@ public class PartyEvSPDefenceParser extends PartyParser {
 
     public PartyEvSPDefenceParser() {
         super(0);
-        this.stat = Stats.valueOf(null);
+        this.stat = Stats.SPECIAL_DEFENCE;
 
     }
 

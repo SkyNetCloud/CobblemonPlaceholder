@@ -4,7 +4,7 @@ plugins {
 
 
 group = 'ca.skynetcloud'
-version = '1.0.3'
+version = '0.0.1'
 
 java {
     archivesBaseName = 'cobblemonplaceholder'
