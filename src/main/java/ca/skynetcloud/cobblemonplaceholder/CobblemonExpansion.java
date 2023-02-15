@@ -70,6 +70,12 @@ public class CobblemonExpansion extends PlaceholderExpansion {
 
     static {
         defaultParsers = Sets.newHashSet(
+
+                new LegendaryParser(),
+                new ShinyParser(),
+                new UltraBeastsParser(),
+
+
                 new DexNumberParser(),
                 new AbilityParser(),
                 new ExperienceParser(),
