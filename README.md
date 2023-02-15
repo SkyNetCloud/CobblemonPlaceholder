@@ -1,6 +1,10 @@
 # CobblemonPlaceholder
 A simple utility to link your PAPI with Cobblemon!
 
+## Base Placeholder
+
+```%cobblemon_version``` - return Cobblemon Mod Verison
+
 ## Party Placeholders
 
 **The following entries that contain "slot" are replaced by the party slot number you wish to target (1 to 6)**
@@ -21,8 +25,15 @@ A simple utility to link your PAPI with Cobblemon!
 
 ```%cobblemon_party_slot_legendary``` - returns Yes or No if Pokemon is Legendary
 
-```%cobblemon_party_slot__ultrabeast``` - returns Yes or No if Pokemon is Ultra Beast
+```%cobblemon_party_slot_ultrabeast``` - returns Yes or No if Pokemon is Ultra Beast
 
+```%cobblemon_party_ot_slot_uuid``` - returns the UUID of the specified Original Trainer (will be use for Original Trainer's UUID when this system is added into cobblemon) 
+
+```%cobblemon_party_ot_slot_name``` - returns the Name of the specified Original Trainer (will be use for Original Trainer's Name when this system is added into cobblemon)
+
+**The follwoing "num" can be replaced with any of the 4 words ("one", "two", "three", "four")**
+
+```%cobblemon_party_slot_num_moveset%``` - returns Pokemom move set give slot and num
 
 **The following "stat" can be replaced with any of the 6 stats ("hp", "atk", "def", "spa", "spd", "spe")**
 
