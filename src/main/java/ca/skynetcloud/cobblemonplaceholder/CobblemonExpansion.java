@@ -1,9 +1,11 @@
 package ca.skynetcloud.cobblemonplaceholder;
 
 import ca.skynetcloud.cobblemonplaceholder.api.Parser;
+import ca.skynetcloud.cobblemonplaceholder.impl.global.CobblemonVersionParser;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.evs.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.ivs.*;
+import ca.skynetcloud.cobblemonplaceholder.impl.trainer.SpeciesCountParser;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.google.common.collect.Sets;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
@@ -71,9 +73,14 @@ public class CobblemonExpansion extends PlaceholderExpansion {
     static {
         defaultParsers = Sets.newHashSet(
 
+                new OTNameParser(),
+                new OTUuidParser(),
+                new NicknameParser(),
                 new LegendaryParser(),
                 new ShinyParser(),
                 new UltraBeastsParser(),
+                new CobblemonVersionParser(),
+                new SpeciesCountParser(),
 
 
                 new DexNumberParser(),
