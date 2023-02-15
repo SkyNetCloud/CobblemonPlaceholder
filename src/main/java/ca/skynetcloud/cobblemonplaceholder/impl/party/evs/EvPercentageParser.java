@@ -3,6 +3,7 @@ package ca.skynetcloud.cobblemonplaceholder.impl.party.evs;
 
 import ca.skynetcloud.cobblemonplaceholder.CobblemonExpansion;
 import ca.skynetcloud.cobblemonplaceholder.impl.PartyParser;
+import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import org.bukkit.entity.Player;
 
@@ -14,7 +15,7 @@ public class EvPercentageParser extends PartyParser
 
     }
 
-    protected EvPercentageParser(final int slot, final boolean isEv) {
+    protected EvPercentageParser(final int slot) {
         super(slot);
     }
 
@@ -26,14 +27,13 @@ public class EvPercentageParser extends PartyParser
     @Override
     public void register() {
         for (int i = 1; i <= 6; ++i) {
-            CobblemonExpansion.registerParser(new EvPercentageParser(i, false));
-            CobblemonExpansion.registerParser(new EvPercentageParser(i, true));
+            CobblemonExpansion.registerParser(new EvPercentageParser(i));
         }
     }
 
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-            return String.format("%.2f", pokemon.getEvs().getDefaultValue() * 100.0D / 510.0D);
+        return String.format("%.2f", pokemon.getEvs().getOrDefault(Stats.HP) + pokemon.getEvs().getOrDefault(Stats.ATTACK) + pokemon.getEvs().getOrDefault(Stats.DEFENCE) + pokemon.getEvs().getOrDefault(Stats.SPECIAL_ATTACK) + pokemon.getEvs().getOrDefault(Stats.SPECIAL_DEFENCE) + pokemon.getEvs().getOrDefault(Stats.SPEED)  * 100.0D / 510.0D);
 
     }
 }

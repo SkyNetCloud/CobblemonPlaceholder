@@ -5,6 +5,10 @@ import ca.skynetcloud.cobblemonplaceholder.impl.global.CobblemonVersionParser;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.evs.*;
 import ca.skynetcloud.cobblemonplaceholder.impl.party.ivs.*;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset1Parser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset2Parser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset3Parser;
+import ca.skynetcloud.cobblemonplaceholder.impl.party.moveset.PartyMoveset4Parser;
 import ca.skynetcloud.cobblemonplaceholder.impl.trainer.SpeciesCountParser;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.google.common.collect.Sets;
@@ -72,6 +76,14 @@ public class CobblemonExpansion extends PlaceholderExpansion {
 
     static {
         defaultParsers = Sets.newHashSet(
+
+                new PartyMoveset4Parser(),
+                new PartyMoveset3Parser(),
+                new PartyMoveset2Parser(),
+                new PartyMoveset1Parser(),
+
+                new EvPercentageParser(),
+                new IvPercentageParser(),
 
                 new OTNameParser(),
                 new OTUuidParser(),

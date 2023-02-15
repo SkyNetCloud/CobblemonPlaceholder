@@ -1,5 +1,5 @@
 name: CobblemonPlaceholder
-version: 0.0.3
+version: 0.0.4
 main: ca.skynetcloud.cobblemonplaceholder.Cobblemonplaceholder
 api-version: 1.19
 depend: [ PlaceholderAPI ]
