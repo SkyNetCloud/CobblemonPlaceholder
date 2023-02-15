@@ -30,6 +30,6 @@ public class PokeballParser extends PartyParser
 
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        return pokemon.getCaughtBall().getName().toLanguageKey();
+        return pokemon.getCaughtBall().getName().toShortLanguageKey().trim();
     }
 }

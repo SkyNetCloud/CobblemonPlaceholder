@@ -36,9 +36,6 @@ public class NatureParser extends PartyParser
     
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        if (this.isMint) {
-            return (pokemon.getMintedNature() == null) ? "None" : pokemon.getMintedNature().getDisplayName();
-        }
-        return pokemon.getNature().getDisplayName();
+        return pokemon.getNature().getDisplayName().trim();
     }
 }

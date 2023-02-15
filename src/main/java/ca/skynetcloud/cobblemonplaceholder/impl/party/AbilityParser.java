@@ -33,6 +33,6 @@ public class AbilityParser extends PartyParser
     
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
-        return pokemon.getAbility().getDisplayName();
+        return pokemon.getAbility().getName().trim().toUpperCase();
     }
 }
