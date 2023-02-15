@@ -23,13 +23,19 @@ A simple utility to link your PAPI with Cobblemon!
 
 ```%cobblemon_party_slot_shiny``` - returns Yes or No if Pokemon is Shiny
 
-```%cobblemon_party_slot_legendary``` - returns Yes or No if Pokemon is Legendary
+```%cobblemon_party_slot_legendary%``` - returns Yes or No if Pokemon is Legendary
 
-```%cobblemon_party_slot_ultrabeast``` - returns Yes or No if Pokemon is Ultra Beast
+```%cobblemon_party_slot_ultrabeast%``` - returns Yes or No if Pokemon is Ultra Beast
 
-```%cobblemon_party_ot_slot_uuid``` - returns the UUID of the specified Original Trainer (will be use for Original Trainer's UUID when this system is added into cobblemon) 
+```%cobblemon_party_ot_slot_uuid%``` - returns the UUID of the specified Original Trainer (will be use for Original Trainer's UUID when this system is added into cobblemon) 
 
-```%cobblemon_party_ot_slot_name``` - returns the Name of the specified Original Trainer (will be use for Original Trainer's Name when this system is added into cobblemon)
+```%cobblemon_party_ot_slot_name%``` - returns the Name of the specified Original Trainer (will be use for Original Trainer's Name when this system is added into cobblemon)
+
+```%cobblemon_party_slot_hidden_ability%``` - returns a Yes or No if pokemon has hidden ability
+
+```%cobblemon_party_slot_egg_group%``` - returns the pokemon egg groups
+
+```%cobblemon_party_slot_base_friendship%``` - returns the pokemon base friendship info
 
 **The follwoing "num" can be replaced with any of the 4 words ("one", "two", "three", "four")**
 

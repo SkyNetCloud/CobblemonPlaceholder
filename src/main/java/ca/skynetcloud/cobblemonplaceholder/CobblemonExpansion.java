@@ -77,6 +77,9 @@ public class CobblemonExpansion extends PlaceholderExpansion {
     static {
         defaultParsers = Sets.newHashSet(
 
+                new BaseFriendshipParser(),
+                new EggGroupParser(),
+                new HiddenAbilityParser(),
                 new PartyMoveset4Parser(),
                 new PartyMoveset3Parser(),
                 new PartyMoveset2Parser(),
