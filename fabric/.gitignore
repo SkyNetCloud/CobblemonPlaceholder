@@ -33,7 +33,7 @@ bin/
 run/
 
 # java
-
+gradle.properties
 hs_err_*.log
 replay_*.log
 *.hprof
