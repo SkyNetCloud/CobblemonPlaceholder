@@ -32,6 +32,8 @@ public class OTNameParser extends PartyParser {
     @Override
     public Object parse(Player p0, Pokemon p1, String[] p2) {
 
+
+
         return Objects.requireNonNull(p1.getOwnerPlayer()).getName().toString().trim();
     }
 }

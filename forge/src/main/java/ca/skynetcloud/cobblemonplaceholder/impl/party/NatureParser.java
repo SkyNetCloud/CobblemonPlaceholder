@@ -36,6 +36,7 @@ public class NatureParser extends PartyParser
     
     @Override
     public Object parse(final Player player, final Pokemon pokemon, final String[] args) {
+
         return pokemon.getNature().getDisplayName().trim();
     }
 }
